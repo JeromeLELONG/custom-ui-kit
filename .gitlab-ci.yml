@@ -1,0 +1,28 @@
+stages:
+    - test
+
+image: crisis7/docker_build
+
+services:
+    - docker:dind
+
+variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+
+before_script:
+    - export NODE_ENV="test"
+
+test:
+    stage: test
+    tags:
+        - docker
+    script:
+        - make install
+        - make test
+    cache:
+        key: "$CI_BUILD_REF_NAME"
+        paths:
+            - node_modules
+

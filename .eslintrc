@@ -1,0 +1,45 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
+    ],
+    "plugins": [
+        "react",    
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "tabWidth": 4,
+                "trailingComma": "all"
+            }
+        ],
+        "no-console": [
+            "error",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "react/jsx-no-comment-textnodes": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "ignoreRestSiblings": true
+            }
+        ]
+    }
+}
