@@ -1,6 +1,6 @@
 {
     "name": "@cnam/ui",
-    "version": "2.4.6",
+    "version": "2.4.7",
     "description": "CNAM UI library",
     "main": "build/index.js",
     "license": "MIT",
